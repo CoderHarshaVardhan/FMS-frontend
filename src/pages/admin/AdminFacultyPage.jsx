@@ -29,7 +29,7 @@ const AdminFacultyPage = () => {
     const handleDelete = async (id) => {
         if (!window.confirm('Are you sure you want to delete this faculty?')) return;
         try {
-            await axios.delete(`http://localhost:5000/api/admin/faculties/${id}`, {
+            await axios.delete(`https://fms-backend-a1b0.onrender.com/api/admin/faculties/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchFaculties();
