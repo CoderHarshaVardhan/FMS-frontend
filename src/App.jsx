@@ -31,27 +31,7 @@ import FacultyMyClasses from "./pages/faculty/FacultyMyClasses";
 import StudentViewTimetable from "./pages/student/StudentViewTimetable";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-import { useContext } from "react";
-import { Navigate } from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
-
-const RootRedirect = () => {
-  const { user } = useContext(AuthContext);
-
-  if (!user) return <Navigate to="/login" />;
-  switch (user.role) {
-    case "admin":
-      return <Navigate to="/admin" />;
-    case "faculty":
-      return <Navigate to="/faculty" />;
-    case "student":
-      return <Navigate to="/student" />;
-    default:
-      return <Navigate to="/login" />;
-  }
-};
-
-
+import RootRedirect from "./pages/RootRedirect";
 
 
 export default function App() {
